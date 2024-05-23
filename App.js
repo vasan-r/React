@@ -1,31 +1,14 @@
-// const heading = React.createElement("h1",{id:"heading"},"hello from react");
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
+import React from "react";
+import ReactDOM from "react-dom/client";
+// react element - it is a object.
+const Title = () => <h1>this is from tile component</h1>;
 
-const parent = React.createElement(
-    "div",
-    {id:"parent"},
-    [React.createElement(
-        "div",
-        {id:"child1"},
-        React.createElement(
-            "h1",
-            {},
-            "hello from child 1")
-            ),
-            React.createElement(
-                "div",
-                {id:"child2"},
-                [React.createElement(
-                    "h1",
-                    {},
-                    "hello from child 2"),
-                    React.createElement(
-                        "h1",
-                        {},
-                        "hello from child 2 2")]
-                    )
-        ]
-        );
+// react functional component - it is a normal js function which return jsx or react element.
+const Heading = () => (
+  <div>
+    <Title />
+    <h1>this is react component</h1>
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<Heading />);
